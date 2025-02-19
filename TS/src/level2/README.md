@@ -12,6 +12,6 @@
 
 ### [Lesson 12](./lesson12/)
 
-## [TypeScript](../)
+## [TypeScript](/TS/)
 
 ## [Main](/README.md)
