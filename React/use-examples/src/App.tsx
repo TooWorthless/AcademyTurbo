@@ -1,9 +1,14 @@
 import React from "react";
-import Notification from "./props/Notifications";
-import EmployeeFilterDashboard from "./useState/EmployeeFilterDashboard";
-import ThemeSwitcher from "./useState/ThemeSwitcher";
-import LoginForm from "./useState/LoginForm";
+import Notification from "./use/props/Notifications";
+import EmployeeFilterDashboard from "./use/useMemo_useCallback/EmployeeDashboard/EmployeeFilterDashboard";
+import ThemeSwitcher from "./use/useState/ThemeSwitcher";
+import LoginForm from "./use/useState/LoginForm";
+import SearchList from "./use/useMemo_useCallback/SearchList/SearchList";
 import "./App.css";
+import { ISearchItem } from "./use/useMemo_useCallback/SearchList/ISearchItem";
+import ParentComponent from "./use/forwardRef_imperativeHandle/ControlledInput/ParentComponent";
+import { ThemeProvider } from "./class-components/TaskManagerContext/context/ThemeContext";
+import TaskManager from "./class-components/TaskManagerContext/components/TaskManagerContext";
 
 
 interface Employee {
@@ -19,14 +24,31 @@ const mockEmployees: Employee[] = [
     { id: 4, name: 'Alice Brown', department: 'Engineering', status: 'active' },
 ];
 
-function App() {
+
+const mockItems: ISearchItem[] = [
+    { id: 1, title: 'It', description: 'Ai, Gpt, Ml' },
+    { id: 2, title: 'Finance', description: 'Banks' },
+    { id: 3, title: 'It', description: 'Engineering' },
+    { id: 4, title: 'Sport', description: 'Volleybal' },
+];
+
+const App: React.FC = () => {
     return (
         <div className="App">
             <div className="App-body">
                 {/* <Notification message="msg" type="error" onClose={() => console.log("close")} /> */}
                 {/* <EmployeeFilterDashboard employees={mockEmployees}/> */}
+                {/* <EmployeeFilterDashboard /> */}
+                {/* <SearchList items={mockItems}/> */}
                 {/* <ThemeSwitcher /> */}
-                <LoginForm />
+                {/* <LoginForm /> */}
+                {/* <ParentComponent /> */}
+                <ThemeProvider>
+                    <div>
+                        <h1>Task Management System</h1>
+                        <TaskManager />
+                    </div>
+                </ThemeProvider>
             </div>
         </div>
     );

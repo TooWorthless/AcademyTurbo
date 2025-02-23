@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 
 
-// enum Theme {
-//     light = '#fff',
-//     dark = '#333',
-//     grey = '#111'
-// };
-
 type Theme = 'light' | 'dark' | 'grey';
+
 const themes: Record<Theme, { [key: string]: string }> = {
-    light: { backgroundColor:'#fff', color: '#000' },
-    grey: { backgroundColor:'#333', color: '#fff' },
-    dark: { backgroundColor:'#111', color: '#fff' }
+    light: { backgroundColor: '#fff', color: '#000' },
+    grey: { backgroundColor: '#333', color: '#fff' },
+    dark: { backgroundColor: '#111', color: '#fff' }
 };
 
 
